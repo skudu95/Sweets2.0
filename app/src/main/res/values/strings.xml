@@ -14,4 +14,5 @@
     <string name="signIn">Please enter your login details.</string>
     <string name="searchArea">Let\'s try \nsome tasty desserts</string>
     <string name="create_an_account">Create an account</string>
+    <string name="btn_dribble">dribble</string>
 </resources>
