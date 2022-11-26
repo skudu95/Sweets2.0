@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Sweets</string>
+
+    <string name="btn_instagram">btnInstagram</string>
+    <string name="btn_twitter">btnTwitter</string>
+    <string name="btn_facebook">btnFacebook</string>
+    <string name="app_logo">appLogo</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_in">Sign In</string>
+    <string name="tagline">Treat yourself to sweets</string>
+    <string name="copyright"> &#169; Template by Sonia</string>
+    <string name="copyright2"> &#169; </string>
+    <string name="signup">Please fill up the form with valid information.</string>
+    <string name="signIn">Please enter your login details.</string>
+    <string name="searchArea">Let\'s try \nsome tasty desserts</string>
+    <string name="create_an_account">Create an account</string>
+</resources>
