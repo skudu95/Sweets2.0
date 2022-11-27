@@ -12,7 +12,11 @@
     <string name="copyright2"> &#169; </string>
     <string name="signup">Please fill up the form with valid information.</string>
     <string name="signIn">Please enter your login details.</string>
-    <string name="searchArea">Let\'s try \nsome tasty desserts</string>
+<!--    <string name="searchArea">Let\'s try \nsome tasty desserts</string>-->
+    <string name="searchArea">Let\'s try some tasty desserts</string>
     <string name="create_an_account">Create an account</string>
     <string name="btn_dribble">dribble</string>
+    <string name="menu">menu</string>
+    <string name="profile">profile</string>
+    <string name="search">search here…</string>
 </resources>

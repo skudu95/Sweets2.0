@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnRegister.setOnClickListener {
             Toast.makeText(this, "Register Activity", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, HomeActivity::class.java))
         }
 
         binding.btnSignIn.setOnClickListener {
