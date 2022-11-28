@@ -1,8 +1,19 @@
 <resources>
-    <string name="app_name">Sweets_Admin</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="app_name">Sweets Admin</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="product_image">product image</string>
     <string name="product_name">product name</string>
     <string name="product_price">৳ 100.00</string>
+    <string name="product_details">Product Details</string>
+    <string name="product_description">Product Description</string>
+    <string name="stock_quantity">Stock Quantity</string>
+    <string name="stock_quantity_number">10</string>
+    <string name="product_description_details">This is product details description.</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="go_to_cart">Go to Cart</string>
+    <string name="product_title">Product Title</string>
+    <string name="add_product">Add Product</string>
+    <string name="no_products_found">No products found!</string>
+    <string name="button_delete">button delete</string>
+    <string name="no_sold_items">You haven\'t sold anything yet!</string>
 </resources>
