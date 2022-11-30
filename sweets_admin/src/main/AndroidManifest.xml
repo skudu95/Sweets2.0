@@ -10,6 +10,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SweetsAdmin">
         <activity
+            android:name=".activity.LoginActivity"
+            android:exported="true"
+            android:theme="@style/Theme.SweetsAdmin.NoActionBar"
+            tools:ignore="LockedOrientationActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".activity.AddProductActivity"
             android:exported="false"
             android:screenOrientation="portrait"
@@ -36,11 +50,11 @@
             tools:ignore="LockedOrientationActivity">
 
             <!-- android:theme="@style/Theme.ShopApp" -->
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <!--  <intent-filter>
+                  <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+                  <category android:name="android.intent.category.LAUNCHER" />
+              </intent-filter>-->
 
             <meta-data
                 android:name="android.app.lib_name"

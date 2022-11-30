@@ -16,4 +16,8 @@
     <string name="no_products_found">No products found!</string>
     <string name="button_delete">button delete</string>
     <string name="no_sold_items">You haven\'t sold anything yet!</string>
+    <string name="admin_login">Admin Login</string>
+    <string name="admin_email">Admin Email</string>
+    <string name="admin_password">Admin Password</string>
+    <string name="login">Login</string>
 </resources>
