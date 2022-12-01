@@ -15,4 +15,16 @@
     <color name="btn_color">#FF7589</color>
     <color name="btn_color_shade">#FFC1D1</color>
 
+    <color name="colorImageViewBackground">#E1E1E1</color>
+    <color name="item_details_bg">#F3F3F3</color>
+    <color name="colorOffWhite">#F8F8F8</color>
+    <color name="item_value_text_color">#545353</color>
+    <color name="colorBorder">#E8E6E6</color>
+    <color name="colorDarkGrey">#878787</color>
+    <color name="colorBackground">#D4FF839A</color>
+    <color name="colorBackground2">#FFACBC</color>
+
+    <!--    <color name="colorPrimaryText">#222934</color>
+        <color name="colorSecondaryText">#989898</color>-->
+
 </resources>

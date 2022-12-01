@@ -30,7 +30,7 @@
         android:textSize="24sp"
         android:textStyle="bold" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnRegister"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
         android:textColor="@color/colorMain"
         android:textSize="18sp" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnSignIn"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
@@ -57,6 +57,7 @@
         android:textAllCaps="false"
         android:textColor="@color/colorMain"
         android:textSize="18sp" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
