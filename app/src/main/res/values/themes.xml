@@ -48,8 +48,11 @@
     <style name="Theme.Sweets" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <item name="colorPrimary">@color/colorMain</item>
         <item name="colorOnPrimary">@color/white</item>
-        <item name="colorPrimaryDark">#222934</item>
+        <!--        <item name="colorPrimaryDark">#222934</item>-->
+        <item name="colorPrimaryDark">#ED2173</item>
         <item name="colorAccent">#ED2173</item>
+        <item name="android:editTextColor">@color/colorMain</item>
+        <item name="android:textColorHint">@color/queryTextColor</item>
         <!--        <item name="fontFamily">@font/roboto_regular</item>-->
     </style>
 

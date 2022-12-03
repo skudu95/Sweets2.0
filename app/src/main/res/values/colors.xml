@@ -23,6 +23,7 @@
     <color name="colorDarkGrey">#878787</color>
     <color name="colorBackground">#D4FF839A</color>
     <color name="colorBackground2">#FFACBC</color>
+    <color name="yellow">#FEBF29</color>
 
     <!--    <color name="colorPrimaryText">#222934</color>
         <color name="colorSecondaryText">#989898</color>-->

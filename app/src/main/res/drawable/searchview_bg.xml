@@ -7,15 +7,10 @@
     <!-- <stroke android:color="@color/btn_color"
          android:width="1dp"/>-->
 
-    <!--  <gradient
-          android:angle="45"
-          android:endColor="@color/btn_color_shade"
-          android:startColor="@color/white"
-          android:type="linear" />-->
-
     <gradient
         android:angle="45"
-        android:endColor="@color/colorMain"
-        android:startColor="@color/logoColor"
+        android:endColor="@color/btn_color_shade"
+        android:startColor="@color/white"
         android:type="linear" />
+
 </shape>

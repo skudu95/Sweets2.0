@@ -28,4 +28,17 @@
     <string name="register">Register</string>
     <string name="login">Login</string>
     <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="category_name">Category Name</string>
+    <string name="categories">Categories</string>
+    <string name="category_image">category image</string>
+    <string name="product_price">৳ 100.00</string>
+    <string name="food_name">Food Name</string>
+    <string name="with_extras">with extras</string>
+    <string name="popular_food_image">popular food image</string>
+    <string name="favourite_food">favourite food</string>
+    <string name="food_rating">4.5</string>
+    <string name="order_now">Order Now</string>
+    <string name="view_all">View All</string>
+    <string name="populars">Populars</string>
+    <string name="cart">Cart</string>
 </resources>
