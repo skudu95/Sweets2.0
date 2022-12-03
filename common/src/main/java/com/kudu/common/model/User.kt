@@ -1,4 +1,4 @@
-package com.kudu.sweets20.model
+package com.kudu.common.model
 
 data class User(
     val id: String = "",

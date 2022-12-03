@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kudu.sweets_admin.R
-import com.kudu.sweets_admin.activity.ProductDetailsActivity
+import com.kudu.sweets_admin.activity.AddProductActivity
 import com.kudu.sweets_admin.adapter.ProductListAdapter
 import com.kudu.sweets_admin.databinding.FragmentProductsBinding
 
@@ -75,7 +75,7 @@ class ProductsFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.add_product -> {
-                startActivity(Intent(activity, ProductDetailsActivity::class.java))
+                startActivity(Intent(activity, AddProductActivity::class.java))
                 return true
             }
         }

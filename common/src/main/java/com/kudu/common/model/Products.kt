@@ -1,4 +1,4 @@
-package com.kudu.sweets_admin.model
+package com.kudu.common.model
 
 data class Products(
     val user_id: String = "",

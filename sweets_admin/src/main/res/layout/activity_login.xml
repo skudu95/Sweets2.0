@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_common"
+    android:background="@drawable/main_screen_bg"
     android:padding="10dp"
     tools:context=".activity.LoginActivity">
 
@@ -13,10 +13,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="10dp"
-        android:background="@drawable/button_bg"
+        android:background="@color/transparent"
         android:text="@string/admin_login"
         android:textAlignment="center"
-        android:textColor="@color/colorOffWhite"
+        android:textColor="@color/logoColor"
         android:textSize="34sp"
         android:textStyle="bold" />
 
@@ -32,10 +32,10 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:hint="@string/admin_email"
-            android:textColorHint="@color/white"
+            android:textColorHint="@color/colorMain"
             app:boxStrokeColor="@color/queryTextColor"
             app:boxStrokeWidth="2dp"
-            app:hintTextColor="@color/white">
+            app:hintTextColor="@color/colorMain">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_email_admin"
@@ -43,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
                 android:singleLine="true"
-                android:textColor="@color/white"
+                android:textColor="@color/colorMain"
                 android:textSize="16sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -54,12 +54,12 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:hint="@string/admin_password"
-            android:textColorHint="@color/white"
+            android:textColorHint="@color/colorMain"
             app:boxStrokeColor="@color/queryTextColor"
             app:boxStrokeWidth="2dp"
-            app:hintTextColor="@color/white"
+            app:hintTextColor="@color/colorMain"
             app:passwordToggleEnabled="true"
-            app:passwordToggleTint="@color/white">
+            app:passwordToggleTint="@color/colorMain">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_password_admin"
@@ -67,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:singleLine="true"
-                android:textColor="@color/white"
+                android:textColor="@color/colorMain"
                 android:textSize="16sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
