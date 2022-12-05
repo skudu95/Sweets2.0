@@ -61,7 +61,7 @@
                     android:scaleType="fitXY" />
 
                 <ImageView
-                    android:id="@+id/iv_add_update_product"
+                    android:id="@+id/iv_add_product"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end|bottom"
