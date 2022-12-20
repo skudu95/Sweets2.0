@@ -24,10 +24,11 @@ class MainActivity : AppCompatActivity() {
 
             if (currentUserID.isNotEmpty()) {
                 startActivity(Intent(this, HomeActivity::class.java))
-            } else {
-                startActivity(Intent(this, LoginActivity::class.java))
             }
-            finish()
+//            else {
+//                startActivity(Intent(this, LoginActivity::class.java))
+//            }
+//            finish()
         }, 250)//TODO: change this if needed
 
         binding.btnRegister.setOnClickListener {

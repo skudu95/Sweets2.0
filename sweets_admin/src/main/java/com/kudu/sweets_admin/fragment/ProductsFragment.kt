@@ -2,16 +2,22 @@ package com.kudu.sweets_admin.fragment
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.firestore.FirebaseFirestore
+import com.kudu.common.model.Products
+import com.kudu.common.util.Constants
 import com.kudu.sweets_admin.R
 import com.kudu.sweets_admin.activity.AddProductActivity
 import com.kudu.sweets_admin.adapter.ProductListAdapter
 import com.kudu.sweets_admin.databinding.FragmentProductsBinding
 
 class ProductsFragment : Fragment() {
+
+    private val mFireStore = FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +33,7 @@ class ProductsFragment : Fragment() {
 
         (activity as AppCompatActivity).supportActionBar?.title = "Products"
 
-        val tempList = ArrayList<String>()
+        /*val tempList = ArrayList<String>()
         tempList.add("Product 1")
         tempList.add("Product 2")
         tempList.add("Product 3")
@@ -57,14 +63,53 @@ class ProductsFragment : Fragment() {
         tempList.add("Product 27")
         tempList.add("Product 28")
         tempList.add("Product 29")
-        tempList.add("Product 30")
+        tempList.add("Product 30")*/
 
-        binding.rvProducts.setHasFixedSize(true)
+        mFireStore.collection(Constants.PRODUCTS)
+            .get()
+            .addOnSuccessListener { document ->
+                Log.e("ProductList", document.documents.toString())
+
+                val productList: ArrayList<Products> = ArrayList()
+                for (i in document.documents) {
+                    val product = i.toObject(Products::class.java)
+                    product!!.id = i.id
+                    productList.add(product)
+                }
+
+                binding.rvProducts.setHasFixedSize(true)
+                binding.rvProducts.setItemViewCacheSize(20)
+                binding.rvProducts.layoutManager = LinearLayoutManager(requireContext())
+                binding.rvProducts.adapter = ProductListAdapter(requireContext(), productList)
+            }
+            .addOnFailureListener { e ->
+                Log.e("ProductListError", "Error while fetching product list", e)
+            }
+
+        /*binding.rvProducts.setHasFixedSize(true)
         binding.rvProducts.setItemViewCacheSize(20)
         binding.rvProducts.layoutManager = LinearLayoutManager(requireContext())
-        binding.rvProducts.adapter = ProductListAdapter(requireContext(), tempList)
+        binding.rvProducts.adapter = ProductListAdapter(requireContext(), tempList)*/
 
         return view
+    }
+
+    private fun getProductList() {
+        mFireStore.collection(Constants.PRODUCTS)
+            .get()
+            .addOnSuccessListener { document ->
+                Log.e("ProductList", document.documents.toString())
+
+                val productList: ArrayList<Products> = ArrayList()
+                for (i in document.documents) {
+                    val product = i.toObject(Products::class.java)
+                    product!!.id = i.id
+                    productList.add(product)
+                }
+            }
+            .addOnFailureListener { e ->
+                Log.e("ProductListError", "Error while fetching product list", e)
+            }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -80,6 +125,11 @@ class ProductsFragment : Fragment() {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        getProductList()
     }
 
 }

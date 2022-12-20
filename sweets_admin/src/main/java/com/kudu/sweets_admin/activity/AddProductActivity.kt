@@ -8,6 +8,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -38,6 +39,11 @@ class AddProductActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setUpActionBar()
+
+        //dropdown category
+        val categoryList = resources.getStringArray(R.array.category_list)
+        val categoryAdapter = ArrayAdapter(this, R.layout.item_dropdown_category_list, categoryList)
+        binding.dropdownCategoryList.setAdapter(categoryAdapter)
 
         //add image button
         binding.ivAddProduct.setOnClickListener {
@@ -121,7 +127,8 @@ class AddProductActivity : AppCompatActivity() {
             user_name = username,
             title = binding.etProductTitle.text.toString().trim { it <= ' ' },
             price = binding.etProductPrice.text.toString().trim { it <= ' ' },
-            category = "",
+            category = binding.dropdownCategoryList.text.toString().trim { it <= ' ' },
+            extras = "",
             description = binding.etProductDescription.text.toString().trim { it <= ' ' },
             stock_quantity = binding.etProductQuantity.text.toString().trim { it <= ' ' },
             image = mProductImageUrl,
@@ -167,6 +174,10 @@ class AddProductActivity : AppCompatActivity() {
             }
             TextUtils.isEmpty(binding.etProductQuantity.text.toString().trim { it <= ' ' }) -> {
                 Toast.makeText(this, "Please enter product quantity", Toast.LENGTH_SHORT).show()
+                false
+            }
+            TextUtils.isEmpty(binding.dropdownCategoryList.text.toString().trim { it <= ' ' }) -> {
+                Toast.makeText(this, "Please select a category", Toast.LENGTH_SHORT).show()
                 false
             }
             else -> {

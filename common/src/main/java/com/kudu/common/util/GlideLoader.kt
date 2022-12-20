@@ -35,4 +35,16 @@ class GlideLoader(val context: Context) {
             e.printStackTrace()
         }
     }
+
+    fun loadCategoryPicture(image: Any, imageView: ImageView) {
+        try {
+            Glide
+                .with(context)
+                .load(image) // URI of the image
+                .fitCenter() // Scale type of the image.
+                .into(imageView) // the view in which the image will be loaded.
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+    }
 }

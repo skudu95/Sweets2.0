@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.kudu.common.model.Categories
+import com.kudu.sweets20.R
 import com.kudu.sweets20.adapter.CategoriesListViewAdapter
 import com.kudu.sweets20.adapter.PopularFoodListViewAdapter
 import com.kudu.sweets20.databinding.ActivityHomeBinding
@@ -17,24 +19,20 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val tempList = ArrayList<String>()
+        val categoryList: ArrayList<Categories> = ArrayList()
 
-        tempList.add("Fruit Cake")
-        tempList.add("Donuts")
-        tempList.add("French Desserts")
-        tempList.add("Category 4")
-        tempList.add("Category 5")
-        tempList.add("Category 6")
-        tempList.add("Category 7")
-        tempList.add("Category 8")
-        tempList.add("Category 9")
-        tempList.add("Category 10")
+        categoryList.add(Categories("Fruit Cake", resources.getDrawable(R.drawable.cake)))
+        categoryList.add(Categories("Donuts", resources.getDrawable(R.drawable.donuts)))
+        categoryList.add(Categories("French Desserts", resources.getDrawable(R.drawable.desserts)))
+        categoryList.add(Categories("Pizza", resources.getDrawable(R.drawable.pizza)))
+        categoryList.add(Categories("Burgers", resources.getDrawable(R.drawable.burger)))
+
 
         binding.rvCategories.setHasFixedSize(true)
         binding.rvCategories.setItemViewCacheSize(20)
         binding.rvCategories.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        binding.rvCategories.adapter = CategoriesListViewAdapter(this, tempList)
+        binding.rvCategories.adapter = CategoriesListViewAdapter(this, categoryList)
 
 
         val popularList = ArrayList<String>()

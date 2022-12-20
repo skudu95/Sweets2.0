@@ -5,9 +5,14 @@
     <gradient
         android:angle="360"
         android:endColor="@color/colorMain"
-        android:startColor="@color/logoColor"
+        android:startColor="@color/colorMain"
         android:type="linear" />
+    <!--<gradient
+        android:angle="360"
+        android:endColor="@color/colorMain"
+        android:startColor="@color/queryTextColor"
+        android:type="linear" />-->
 
-    <corners android:radius="10dp" />
+    <corners android:radius="15dp" />
 
 </shape>
