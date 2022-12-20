@@ -33,38 +33,6 @@ class ProductsFragment : Fragment() {
 
         (activity as AppCompatActivity).supportActionBar?.title = "Products"
 
-        /*val tempList = ArrayList<String>()
-        tempList.add("Product 1")
-        tempList.add("Product 2")
-        tempList.add("Product 3")
-        tempList.add("Product 4")
-        tempList.add("Product 5")
-        tempList.add("Product 6")
-        tempList.add("Product 7")
-        tempList.add("Product 8")
-        tempList.add("Product 9")
-        tempList.add("Product 10")
-        tempList.add("Product 11")
-        tempList.add("Product 12")
-        tempList.add("Product 13")
-        tempList.add("Product 14")
-        tempList.add("Product 15")
-        tempList.add("Product 16")
-        tempList.add("Product 17")
-        tempList.add("Product 18")
-        tempList.add("Product 19")
-        tempList.add("Product 20")
-        tempList.add("Product 21")
-        tempList.add("Product 22")
-        tempList.add("Product 23")
-        tempList.add("Product 24")
-        tempList.add("Product 25")
-        tempList.add("Product 26")
-        tempList.add("Product 27")
-        tempList.add("Product 28")
-        tempList.add("Product 29")
-        tempList.add("Product 30")*/
-
         mFireStore.collection(Constants.PRODUCTS)
             .get()
             .addOnSuccessListener { document ->

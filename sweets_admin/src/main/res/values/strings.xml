@@ -28,13 +28,5 @@
     <string name="app_logo">App Logo</string>
     <string name="tagline">Treat yourself to sweets</string>
 
-    <string-array name="category_list">
-        <item>Fruit Cake</item>
-        <item>Donuts</item>
-        <item>French Desserts</item>
-        <item>Pizza</item>
-        <item>Burgers</item>
-    </string-array>
-
 
 </resources>

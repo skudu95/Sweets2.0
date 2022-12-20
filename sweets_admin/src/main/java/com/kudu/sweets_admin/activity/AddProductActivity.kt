@@ -41,7 +41,7 @@ class AddProductActivity : AppCompatActivity() {
         setUpActionBar()
 
         //dropdown category
-        val categoryList = resources.getStringArray(R.array.category_list)
+        val categoryList = resources.getStringArray(com.kudu.common.R.array.category_list)
         val categoryAdapter = ArrayAdapter(this, R.layout.item_dropdown_category_list, categoryList)
         binding.dropdownCategoryList.setAdapter(categoryAdapter)
 

@@ -80,7 +80,8 @@
                 android:clickable="true"
                 android:contentDescription="@string/favourite_food"
                 android:focusable="true"
-                android:src="@drawable/favourite_empty" />
+                android:src="@drawable/favourite_empty_2" />
+<!--                android:src="@drawable/favourite_empty" />-->
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tv_rating_popular"

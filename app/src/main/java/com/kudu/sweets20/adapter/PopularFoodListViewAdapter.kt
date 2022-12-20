@@ -2,13 +2,18 @@ package com.kudu.sweets20.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.kudu.common.model.Products
+import com.kudu.common.util.GlideLoader
+import com.kudu.sweets20.R
 import com.kudu.sweets20.databinding.ItemPopularsViewBinding
 
 class PopularFoodListViewAdapter(
     private val context: Context,
-    private val popularList: ArrayList<String>
+    private val popularList: ArrayList<Products>
 ) : RecyclerView.Adapter<PopularFoodListViewAdapter.MyHolder>() {
 
     class MyHolder(binding: ItemPopularsViewBinding) : RecyclerView.ViewHolder(binding.root) {
@@ -16,6 +21,8 @@ class PopularFoodListViewAdapter(
         val extra = binding.tvFoodExtraPopular
         val image = binding.ivPopularImage
         val rating = binding.tvRatingPopular
+        val favourite = binding.btnFavouriteFood
+        val price = binding.tvFoodPricePopular
         val root = binding.root
     }
 
@@ -32,10 +39,31 @@ class PopularFoodListViewAdapter(
     override fun onBindViewHolder(holder: MyHolder, position: Int) {
         val model = popularList[position]
 
-        holder.title.text = model
+        holder.title.text = model.title
+        holder.extra.visibility = View.GONE
+        GlideLoader(context).loadProductPicture(model.image, holder.image)
+        holder.rating.text = "4.9"
+        holder.price.text = buildString {
+            append("$ ")
+            append(model.price)
+        }
+        holder.favourite.setOnClickListener {
+            Toast.makeText(context, "${model.title} added to Favourites", Toast.LENGTH_SHORT).show()
+            holder.favourite.setImageResource(R.drawable.favourite_filled)
+        }
+
+        holder.root.setOnClickListener {
+            Toast.makeText(context, "${model.title} clicked", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun getItemCount(): Int {
         return popularList.size
+    }
+
+    private fun removeFavourite(position: Int) {
+        popularList.removeAt(position)
+        notifyItemRemoved(position)
+        notifyItemRangeChanged(position, popularList.size)
     }
 }
