@@ -36,9 +36,19 @@
     <string name="with_extras">with extras</string>
     <string name="popular_food_image">popular food image</string>
     <string name="favourite_food">favourite food</string>
+    <string name="favourites">favourites</string>
     <string name="food_rating">4.5</string>
     <string name="order_now">Order Now</string>
     <string name="view_all">View All</string>
     <string name="populars">Populars</string>
     <string name="cart">Cart</string>
+    <string name="personal_details">Personal Details</string>
+    <string name="full_name">Full Name</string>
+    <string name="email">Email</string>
+    <string name="email_hint">email@email.com</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="mobile_number_hint">01000000000</string>
+    <string name="password_hint_PA">*********</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

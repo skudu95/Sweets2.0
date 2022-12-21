@@ -52,8 +52,9 @@ class HomeActivity : AppCompatActivity() {
             startActivity(Intent(this, CartActivity::class.java))
         }
 
-        //favourite
-        if(isFavourite){
+        //profile button
+        binding.btnProfile.setOnClickListener {
+            startActivity(Intent(this, ProfileActivity::class.java))
         }
     }
 

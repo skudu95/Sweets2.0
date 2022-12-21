@@ -13,11 +13,12 @@ import com.kudu.sweets20.R
 import com.kudu.sweets20.activity.ProductDetailsActivity
 import com.kudu.sweets20.databinding.ItemPopularsViewBinding
 
-class PopularFoodListViewAdapter(
+class FavouriteListAdapter(
     private val context: Context,
-    private val popularList: ArrayList<Products>
-) : RecyclerView.Adapter<PopularFoodListViewAdapter.MyHolder>() {
+    private val favouriteList: ArrayList<Products>
+) : RecyclerView.Adapter<FavouriteListAdapter.MyHolder>() {
 
+    //TODO: change the favourite item view
     class MyHolder(binding: ItemPopularsViewBinding) : RecyclerView.ViewHolder(binding.root) {
         val title = binding.tvFoodNamePopular
         val extra = binding.tvFoodExtraPopular
@@ -39,21 +40,21 @@ class PopularFoodListViewAdapter(
     }
 
     override fun onBindViewHolder(holder: MyHolder, position: Int) {
-        val model = popularList[position]
+        val model = favouriteList[position]
 
         holder.title.text = model.title
         holder.extra.visibility = View.GONE
         GlideLoader(context).loadProductPicture(model.image, holder.image)
-        holder.rating.text = "4.9"
+        holder.rating.visibility = View.GONE
+        //TODO: make changes accordingly
+        holder.favourite.setImageResource(R.drawable.favourite_filled)
+        holder.favourite.setOnClickListener {
+            holder.favourite.setImageResource(R.drawable.favourite_empty_2)
+        }
         holder.price.text = buildString {
             append("$ ")
             append(model.price)
         }
-        holder.favourite.setOnClickListener {
-            Toast.makeText(context, "${model.title} added to Favourites", Toast.LENGTH_SHORT).show()
-            holder.favourite.setImageResource(R.drawable.favourite_filled)
-        }
-
         holder.root.setOnClickListener {
             Toast.makeText(context, "${model.title} clicked", Toast.LENGTH_SHORT).show()
             context.startActivity(Intent(context, ProductDetailsActivity::class.java))
@@ -61,12 +62,6 @@ class PopularFoodListViewAdapter(
     }
 
     override fun getItemCount(): Int {
-        return popularList.size
-    }
-
-    private fun removeFavourite(position: Int) {
-        popularList.removeAt(position)
-        notifyItemRemoved(position)
-        notifyItemRangeChanged(position, popularList.size)
+        return favouriteList.size
     }
 }
