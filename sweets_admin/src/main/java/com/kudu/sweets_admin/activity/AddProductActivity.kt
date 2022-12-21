@@ -129,6 +129,7 @@ class AddProductActivity : AppCompatActivity() {
             price = binding.etProductPrice.text.toString().trim { it <= ' ' },
             category = binding.dropdownCategoryList.text.toString().trim { it <= ' ' },
             extras = "",
+            mass = "",
             description = binding.etProductDescription.text.toString().trim { it <= ' ' },
             stock_quantity = binding.etProductQuantity.text.toString().trim { it <= ' ' },
             image = mProductImageUrl,

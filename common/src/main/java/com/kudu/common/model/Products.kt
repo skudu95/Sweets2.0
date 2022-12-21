@@ -10,5 +10,6 @@ data class Products(
     val stock_quantity: String = "",
     val image: String = "",
     val extras: String = "",
+    val mass: String = "",
     var id: String = "",
 )

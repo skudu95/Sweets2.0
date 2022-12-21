@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.kudu.common.model.Products
+import com.kudu.common.util.Constants
 import com.kudu.common.util.GlideLoader
 import com.kudu.sweets20.R
 import com.kudu.sweets20.activity.ProductDetailsActivity
@@ -55,8 +56,10 @@ class PopularFoodListViewAdapter(
         }
 
         holder.root.setOnClickListener {
-            Toast.makeText(context, "${model.title} clicked", Toast.LENGTH_SHORT).show()
-            context.startActivity(Intent(context, ProductDetailsActivity::class.java))
+//            Toast.makeText(context, "${model.title} clicked", Toast.LENGTH_SHORT).show()
+            val intent = Intent(context, ProductDetailsActivity::class.java)
+            intent.putExtra(Constants.EXTRA_PRODUCT_ID, model.id)
+            context.startActivity(intent)
         }
     }
 
