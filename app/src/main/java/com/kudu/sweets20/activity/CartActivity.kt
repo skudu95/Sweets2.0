@@ -1,9 +1,14 @@
 package com.kudu.sweets20.activity
 
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.kudu.sweets20.R
 import com.kudu.sweets20.databinding.ActivityCartBinding
+import com.kudu.sweets20.fragment.CartItemsFragment
+import com.kudu.sweets20.fragment.ConfirmOrderFragment
+import com.kudu.sweets20.fragment.ReviewPaymentFragment
 
 class CartActivity : AppCompatActivity() {
 
@@ -16,6 +21,36 @@ class CartActivity : AppCompatActivity() {
 
         setUpActionBar()
 
+        loadFragment(CartItemsFragment())
+
+        //nav bar cart
+        binding.cartNav.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.nav_1 -> {
+                    loadFragment(CartItemsFragment())
+                }
+                R.id.nav_2 -> {
+                    loadFragment(ReviewPaymentFragment())
+                }
+                R.id.nav_3 -> {
+                    loadFragment(ConfirmOrderFragment())
+                }
+            }
+            return@setOnItemSelectedListener true
+        }
+
+    }
+
+    //load fragmment
+    private fun loadFragment(fragment: Fragment) {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.cart_fragment_container, fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return super.onOptionsItemSelected(item)
     }
 
     //setting up actionbar with back button

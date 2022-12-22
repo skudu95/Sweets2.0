@@ -1,5 +1,6 @@
 package com.kudu.sweets20.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -34,6 +35,7 @@ class ProductDetailsActivity : AppCompatActivity() {
 
         binding.btnCartPDA.setOnClickListener {
             Toast.makeText(this, "Cart Clicked", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, CartActivity::class.java))
         }
     }
 

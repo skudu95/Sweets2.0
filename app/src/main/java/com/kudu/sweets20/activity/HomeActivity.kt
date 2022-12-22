@@ -79,6 +79,9 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        getProductList()
+        if (productList != null) {
+            productList.clear()
+            getProductList()
+        }
     }
 }
