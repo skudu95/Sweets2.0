@@ -53,4 +53,7 @@
     <string name="product_mass"><b>300 g</b> / 530 Kcal</string>
     <string name="add_to_cart">Add to Cart</string>
     <string name="estimated_delivery_with_time">Estimated delivery \n<b>20 min</b></string>
+    <string name="apply_voucher">Apply a voucher</string>
+    <string name="no_cutlery">We won\'t bring cutlery. Thanks for helping us reduce waste.</string>
+    <string name="yes_cutlery">We will provide cutlery, if available.</string>
 </resources>

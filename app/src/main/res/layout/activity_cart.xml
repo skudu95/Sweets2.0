@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginEnd="?android:attr/actionBarSize"
-            android:fontFamily="@font/roboto_medium"
+            android:fontFamily="@font/gotham_medium"
             android:gravity="start|center_vertical"
             android:text="@string/cart"
             android:textAllCaps="false"
