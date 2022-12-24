@@ -56,4 +56,15 @@
     <string name="apply_voucher">Apply a voucher</string>
     <string name="no_cutlery">We won\'t bring cutlery. Thanks for helping us reduce waste.</string>
     <string name="yes_cutlery">We will provide cutlery, if available.</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="subtotal_amount">$ 200</string>
+    <string name="discount">Discount</string>
+    <string name="discount_amount">$ 2</string>
+    <string name="delivery_fee">Delivery Fee</string>
+    <string name="delivery_fee_amount">$ 0</string>
+    <string name="cutlery">Cutlery</string>
+    <string name="total">Total</string>
+    <string name="incl_vat"> (incl. VAT)</string>
+    <string name="total_amount">$ 220</string>
+    <string name="review_payment_and_address">Review payment and address</string>
 </resources>

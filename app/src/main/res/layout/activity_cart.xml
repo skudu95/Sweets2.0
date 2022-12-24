@@ -28,45 +28,48 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <ScrollView
+    <!-- <ScrollView
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:layout_below="@id/toolbar_cart_activity"
+         android:background="@drawable/white_bg">-->
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/toolbar_cart_activity"
-        android:background="@drawable/white_bg">
+        android:background="@drawable/white_bg"
+        android:orientation="vertical"
+        android:padding="10dp">
 
-        <LinearLayout
+        <!--  <com.google.android.material.tabs.TabLayout
+              android:id="@+id/tabs"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              app:tabBackground="@color/logoColor"
+              app:tabGravity="fill"
+              app:tabMode="fixed"
+              app:tabTextColor="@color/colorMain" />
+
+          <androidx.viewpager2.widget.ViewPager2
+              android:id="@+id/viewPager"
+              android:layout_width="match_parent"
+              android:layout_height="0dp" />-->
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/cart_nav"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="10dp">
+            android:layout_height="25dp"
+            android:background="@color/white"
+            app:menu="@menu/cart_nav" />
 
-            <!--  <com.google.android.material.tabs.TabLayout
-                  android:id="@+id/tabs"
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  app:tabBackground="@color/logoColor"
-                  app:tabGravity="fill"
-                  app:tabMode="fixed"
-                  app:tabTextColor="@color/colorMain" />
-
-              <androidx.viewpager2.widget.ViewPager2
-                  android:id="@+id/viewPager"
-                  android:layout_width="match_parent"
-                  android:layout_height="0dp" />-->
-
-            <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:id="@+id/cart_nav"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                app:menu="@menu/cart_nav" />
-
-            <FrameLayout
-                android:id="@+id/cart_fragment_container"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
+        <FrameLayout
+            android:id="@+id/cart_fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
 
-    </ScrollView>
+    <!--    </ScrollView>-->
 
 </RelativeLayout>
