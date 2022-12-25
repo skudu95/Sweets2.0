@@ -105,6 +105,7 @@ class HomeActivity : AppCompatActivity() {
             startActivity(Intent(this, ProfileActivity::class.java))
         }
     }
+//} jjust checking commit
 
     //setting up actionbar with back button
     private fun setUpActionBar() {
