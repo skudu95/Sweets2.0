@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/side_nav_orders"
+        android:icon="@drawable/orders"
+        android:iconTint="@color/colorMain"
+        android:title="@string/my_orders" />
+
+    <item
+        android:id="@+id/side_nav_profile"
+        android:icon="@drawable/profile"
+        android:iconTint="@color/colorMain"
+        android:title="@string/my_profile" />
+
+    <item
+        android:id="@+id/side_nav_favourites"
+        android:icon="@drawable/favourites"
+        android:iconTint="@color/colorMain"
+        android:title="@string/my_favourites" />
+
+    <item
+        android:id="@+id/side_nav_addresses"
+        android:icon="@drawable/address"
+        android:iconTint="@color/colorMain"
+        android:title="@string/my_addresses" />
+
+    <item
+        android:id="@+id/side_nav_voucher"
+        android:icon="@drawable/voucher"
+        android:iconTint="@color/colorMain"
+        android:title="@string/vouchers" />
+
+    <item
+        android:id="@+id/side_nav_logout"
+        android:icon="@drawable/logout"
+        android:iconTint="@color/colorMain"
+        android:title="@string/logout" />
+</menu>

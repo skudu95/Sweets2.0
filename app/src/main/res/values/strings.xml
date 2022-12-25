@@ -67,4 +67,12 @@
     <string name="incl_vat"> (incl. VAT)</string>
     <string name="total_amount">$ 220</string>
     <string name="review_payment_and_address">Review payment and address</string>
+    <string name="my_profile">My Profile</string>
+    <string name="my_orders">My Orders</string>
+    <string name="vouchers">Vouchers</string>
+    <string name="my_addresses">My Addresses</string>
+    <string name="logout">Logout</string>
+    <string name="my_favourites">My Favourites</string>
+    <string name="open">Drawer Open</string>
+    <string name="close">Drawer Close</string>
 </resources>
