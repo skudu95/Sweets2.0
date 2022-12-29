@@ -54,6 +54,7 @@
                     android:background="@color/transparent"
                     android:contentDescription="@string/menu"
                     android:src="@drawable/menu"
+                    android:visibility="invisible"
                     app:tint="@color/white" />
 
                 <ImageButton
@@ -90,16 +91,28 @@
                 android:textSize="32sp"
                 android:textStyle="bold" />
 
-            <SearchView
+            <!--  <SearchView
+                  android:id="@+id/search_view"
+                  android:layout_width="match_parent"
+                  android:layout_height="35dp"
+                  android:layout_marginTop="8dp"
+                  android:background="@drawable/searchview_bg"
+                  android:iconifiedByDefault="false"
+                  android:queryBackground="@color/transparent"
+                  android:queryHint="@string/search"
+                  android:searchIcon="@drawable/search" />-->
+
+            <androidx.appcompat.widget.SearchView
                 android:id="@+id/search_view"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/searchview_bg"
-                android:iconifiedByDefault="false"
-                android:queryBackground="@color/transparent"
-                android:queryHint="@string/search"
-                android:searchIcon="@drawable/search" />
+                android:focusable="false"
+                app:iconifiedByDefault="false"
+                app:queryBackground="@color/transparent"
+                app:queryHint="@string/search"
+                app:searchIcon="@drawable/search" />
 
         </LinearLayout>
 
@@ -188,12 +201,12 @@
                     android:textAllCaps="false"
                     android:textColor="@color/white"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:visibility="invisible" />
 
             </LinearLayout>
         </ScrollView>
 
     </RelativeLayout>
-
 
 </androidx.drawerlayout.widget.DrawerLayout>

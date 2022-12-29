@@ -1,12 +1,15 @@
 package com.kudu.sweets20.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.kudu.common.model.Categories
+import com.kudu.common.util.Constants
 import com.kudu.common.util.GlideLoader
+import com.kudu.sweets20.activity.CategoryFoodListActivity
 import com.kudu.sweets20.databinding.ItemCategoriesViewBinding
 
 class CategoriesListViewAdapter(
@@ -36,7 +39,9 @@ class CategoriesListViewAdapter(
         holder.title.text = model.title
         GlideLoader(context).loadCategoryPicture(model.image, holder.image)
         holder.root.setOnClickListener {
-//            TODO: make it query data from db
+            val intent = Intent(context, CategoryFoodListActivity::class.java)
+            intent.putExtra(Constants.CATEGORY_TITLE, model.title)
+            context.startActivity(intent)
             Toast.makeText(context, "${model.title} clicked", Toast.LENGTH_SHORT).show()
         }
     }

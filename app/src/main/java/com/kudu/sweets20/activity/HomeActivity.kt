@@ -7,7 +7,6 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.GravityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.firestore.FirebaseFirestore
 import com.kudu.common.model.Categories
@@ -32,20 +31,6 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setUpActionBar()
-        /* toggle = ActionBarDrawerToggle(this, binding.root, R.string.open, R.string.close)
-         binding.root.addDrawerListener(toggle)
-         toggle.syncState()
-         supportActionBar?.setDisplayHomeAsUpEnabled(true)*/
-
-        //drawer
-        binding.btnMenu.setOnClickListener {
-            toggle = ActionBarDrawerToggle(this, binding.root, R.string.open, R.string.close)
-            binding.root.addDrawerListener(toggle)
-            toggle.syncState()
-            supportActionBar?.setDisplayHomeAsUpEnabled(true)
-            binding.root.openDrawer(GravityCompat.START)
-            Toast.makeText(this, "Menu Clicked", Toast.LENGTH_SHORT).show()
-        }
 
         //side nav
         binding.sideNav.setNavigationItemSelectedListener {
@@ -73,7 +58,6 @@ class HomeActivity : AppCompatActivity() {
             return@setNavigationItemSelectedListener true
         }
 
-
         val categoryList: ArrayList<Categories> = ArrayList()
 
         categoryList.add(Categories("Fruit Cake", resources.getDrawable(R.drawable.cake)))
@@ -94,6 +78,7 @@ class HomeActivity : AppCompatActivity() {
         binding.rvPopulars.setItemViewCacheSize(20)
         binding.rvPopulars.layoutManager = LinearLayoutManager(this)
         binding.rvPopulars.adapter = PopularFoodListViewAdapter(this, productList)
+        binding.rvPopulars.adapter?.notifyDataSetChanged()
 
         //order now button
         binding.btnOrderNow.setOnClickListener {
@@ -113,7 +98,8 @@ class HomeActivity : AppCompatActivity() {
         val actionbar = supportActionBar
         if (actionbar != null) {
             actionbar.setDisplayHomeAsUpEnabled(true)
-            actionbar.setHomeAsUpIndicator(R.drawable.back)
+            actionbar.setHomeAsUpIndicator(R.drawable.menu)
+
         }
 //        binding.toolbarHomeActivity.setNavigationOnClickListener { onBackPressed() }
     }

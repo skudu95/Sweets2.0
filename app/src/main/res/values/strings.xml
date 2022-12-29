@@ -75,4 +75,6 @@
     <string name="my_favourites">My Favourites</string>
     <string name="open">Drawer Open</string>
     <string name="close">Drawer Close</string>
+    <string name="delivery_image">delivery_image</string>
+    <string name="product_image">Product Image</string>
 </resources>
