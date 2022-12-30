@@ -5,18 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_common"
-    tools:context=".activity.HomeActivity">
-
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/sideNav"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:background="@color/white"
-        android:fitsSystemWindows="true"
-        app:itemIconTint="@color/colorMain"
-        app:itemTextColor="@color/colorMain"
-        app:menu="@menu/side_nav" />
+    tools:context=".activity.HomeActivity"
+    tools:openDrawer="start">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -29,16 +19,7 @@
             android:layout_alignParentTop="true"
             android:layout_gravity="top"
             android:background="@color/transparent">
-            <!--            <com.google.android.material.textview.MaterialTextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginEnd="?android:attr/actionBarSize"
-                            android:fontFamily="@font/roboto_medium"
-                            android:gravity="center"
-                            android:textAllCaps="true"
-                            android:textColor="@color/white"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />-->
+
             <RelativeLayout
                 android:id="@+id/relative_top_buttons"
                 android:layout_width="match_parent"
@@ -91,24 +72,12 @@
                 android:textSize="32sp"
                 android:textStyle="bold" />
 
-            <!--  <SearchView
-                  android:id="@+id/search_view"
-                  android:layout_width="match_parent"
-                  android:layout_height="35dp"
-                  android:layout_marginTop="8dp"
-                  android:background="@drawable/searchview_bg"
-                  android:iconifiedByDefault="false"
-                  android:queryBackground="@color/transparent"
-                  android:queryHint="@string/search"
-                  android:searchIcon="@drawable/search" />-->
-
             <androidx.appcompat.widget.SearchView
                 android:id="@+id/search_view"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/searchview_bg"
-                android:focusable="false"
                 app:iconifiedByDefault="false"
                 app:queryBackground="@color/transparent"
                 app:queryHint="@string/search"
@@ -208,5 +177,16 @@
         </ScrollView>
 
     </RelativeLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/sideNav"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/colorOffWhite"
+        android:fitsSystemWindows="true"
+        app:itemIconTint="@color/colorMain"
+        app:itemTextColor="@color/colorMain"
+        app:menu="@menu/side_nav" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

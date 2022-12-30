@@ -1,5 +1,6 @@
 package com.kudu.sweets20.activity
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -9,6 +10,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 import com.kudu.common.model.Categories
 import com.kudu.common.model.Products
 import com.kudu.common.util.Constants
@@ -25,11 +27,13 @@ class HomeActivity : AppCompatActivity() {
     private val isFavourite: Boolean = false
     private lateinit var toggle: ActionBarDrawerToggle
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setUpDrawerToggle()
         setUpActionBar()
 
         //side nav
@@ -98,14 +102,29 @@ class HomeActivity : AppCompatActivity() {
         val actionbar = supportActionBar
         if (actionbar != null) {
             actionbar.setDisplayHomeAsUpEnabled(true)
+            actionbar.setHomeButtonEnabled(true)
             actionbar.setHomeAsUpIndicator(R.drawable.menu)
 
         }
-//        binding.toolbarHomeActivity.setNavigationOnClickListener { onBackPressed() }
+        /* binding.toolbarHomeActivity.setNavigationOnClickListener {
+             toggle = ActionBarDrawerToggle(this, binding.root, R.string.open, R.string.close)
+             binding.root.addDrawerListener(toggle)
+             toggle.syncState()
+         }*/
+    }
+
+    //setup toggle
+    private fun setUpDrawerToggle() {
+        toggle = ActionBarDrawerToggle(this, binding.root, R.string.open, R.string.close)
+        binding.root.addDrawerListener(toggle)
+        toggle.syncState()
+//        toggle.isDrawerIndicatorEnabled = true
+//        toggle.setHomeAsUpIndicator(R.drawable.menu)
     }
 
     private fun getProductList() {
         mFireStore.collection(Constants.PRODUCTS)
+            .orderBy("title", Query.Direction.DESCENDING)
             .limit(5)
             .get()
             .addOnSuccessListener { document ->

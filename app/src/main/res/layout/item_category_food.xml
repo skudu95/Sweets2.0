@@ -69,8 +69,8 @@
                 android:id="@+id/tv_delivery_charge_category_food"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_light"
                 android:layout_gravity="center"
+                android:fontFamily="@font/roboto_light"
                 android:text="Free"
                 android:textColor="@color/colorMain"
                 android:textSize="14sp" />
